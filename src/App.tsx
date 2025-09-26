@@ -9,6 +9,12 @@ import Men from "./pages/Men";
 import Beauty from "./pages/Beauty";
 import Handbags from "./pages/Handbags";
 import HandbagDetail from "./pages/HandbagDetail";
+import Login from "./pages/Auth/Login";
+import Signup from "./pages/Auth/Signup";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
+import ContactUs from "./pages/ContactUs";
+import FindStore from "./pages/Services/FindStore";
+import PersonalizationServices from "./pages/Services/PersonalizationServices";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +35,17 @@ const App = () => (
           <Route path="/women/handbags" element={<Handbags />} />
           <Route path="/women/handbags/:productId" element={<HandbagDetail />} />
           <Route path="/bags-leather/womens-bags/:productId" element={<HandbagDetail />} />
+          
+          {/* Auth Routes */}
+          <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/signup" element={<Signup />} />
+          <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+          
+          {/* Service Pages */}
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/stores" element={<FindStore />} />
+          <Route path="/services/personalization" element={<PersonalizationServices />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
